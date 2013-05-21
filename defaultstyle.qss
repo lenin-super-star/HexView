@@ -1,0 +1,330 @@
+
+QWidget
+{
+    outline: none;
+}
+
+QMainWindow
+{
+    background:       rgb(237, 237, 237);
+    border:           none;
+}
+
+QMainWindow > QToolBar,
+QMainWindow > QMenuBar
+{
+    background:       rgb(237, 237, 237);
+    background:       rgb(80, 80, 90);
+    border:           none;
+    padding:          3px;
+}
+
+
+QMainWindow > QMenuBar::item:selected
+{
+    color: rgb(108, 170, 255);
+}
+
+
+QMainWindow > QToolBar
+{
+    color:      white;
+    padding:    1px;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0   rgb(78, 140, 255),
+                                stop:0.4 rgb(93, 155, 255),
+                                stop:0.5 rgb(93, 155, 255),
+                                stop:1   rgb(78, 140, 255));
+
+    background:       rgb(80, 80, 90);
+
+    border: 2px solid rgb(80,80,90);
+}
+
+QMainWindow > QToolBar > QToolButton
+{
+
+}
+
+QMainWindow > QToolBar > QToolButton:hover
+{
+    background: qradialgradient(cx:0.5, cy:0.5, radius: 0.6,
+                 fx:0.5, fy:0.5, stop:0 rgb(108, 170, 255), stop:1 transparent);
+    background: rgb(108, 170, 255);
+
+    background: rgb(110,110,120);
+
+    border:     none;
+}
+
+QMainWindow > QMenuBar::item
+{
+    background:       rgb(237, 237, 237);
+    background:       rgb(80, 80, 90);
+    color:            white;
+}
+
+QMainWindow > QToolBar > QLineEdit
+{
+    border:             0.5px solid rgb(140,140,140);
+    color:              rgb(70,70,70);
+    background-color:   light;
+    padding-left:       2px;
+    padding-right:      2px;
+}
+
+QSplitter::vertical:handle
+{
+    width:  1px;
+}
+
+QSplitter:horizontal::handle
+{
+    height: 1px;
+}
+
+QSplitter::handle:vertical
+{
+    border:     noborder;
+    background: qlineargradient(x1: 0, y1: 0, x2: 1, y2: ,
+                                stop: 0 rgb(229, 229, 232),
+                                stop: 0.5 rgb(182,188,192),
+                                stop: 1 rgb(229, 229, 232));
+
+    background: rgb(120,120,120);
+
+background: rgba(68, 130, 255, 130);
+}
+
+QSplitter::handle:horizontal
+{
+    border:     none;
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                stop: 0 rgb(229, 229, 232),
+                                stop: 0.5 rgb(182,188,192),
+                                stop: 1 rgb(229, 229, 232));
+    background: rgb(220,220,220);
+
+background: rgba(80, 80, 90, 100);
+}
+
+QTabWidget#TABVIEW QWidget#HEXVIEW
+{
+    background:  white;
+    border:      0.5px solid rgb(170,170,170);
+    border:      none;
+    border-top:  2px solid rgb(90, 99, 116);
+    border:      none;
+    border-top:  0.5px solid rgb(108, 170, 255);
+    border:      none;
+    top:         0px;
+    padding-top: 0px;
+}
+
+QTabWidget#TABVIEW QTabBar
+{
+    border: none;
+}
+
+QTabWidget#TABVIEW QTabBar::tab
+{
+    border:         none;
+    padding:        2px;
+    padding-left:   3px;
+    color:          rgb(80,80,80);
+}
+
+QTabWidget#TABVIEW QTabBar::tab QToolButton
+{
+    border:     none;
+}
+
+QTabWidget#TABVIEW QTabBar::tab:selected
+{
+    color:      white;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0   #969FB0,
+                                stop:0.4 #828B9C,
+                                stop:0.5 #828B9C,
+                                stop:1   #969FB0);
+
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0   rgb(90, 99, 116),
+                                stop:0.4 rgb(100, 109, 126),
+                                stop:0.5 rgb(100, 109, 126),
+                                stop:1   rgb(90, 99, 116),);
+
+    background: qlineargradient(x1:1, y1:0, x2:0, y2:0,
+                                stop:0   rgb(90, 99, 116),
+                                stop:1   white);
+
+    background: white;
+    color:      rgb(50,50,50);
+
+background: rgb(32, 105, 255 );
+color: white;
+
+}
+
+QTabWidget#TABVIEW QTabBar::tab:!selected:hover
+{
+    background: rgb(225,230,255);
+
+    background: qradialgradient(cx:0.5, cy:0.5, radius: 0.6,
+                 fx:0.5, fy:0.5, stop:0 rgb(210, 220, 255), stop:1 transparent);
+
+background: rgb(160, 160, 170);
+color: white;
+border-top: 2px solid rgb(237,237,237);
+border: none;
+
+background: rgb(237,237,237);
+
+color: rgb(251, 177, 23 );
+}
+
+
+QTabWidget#TABVIEW
+{
+    border:     none;
+}
+
+QTabWidget#TABVIEW:pane
+{
+    background: white;
+    border:     none;
+}
+
+QWidget#FILESVIEW
+{
+    padding-top: 5px;
+    background:  rgb(237, 237, 237);
+    border:      none;
+    background:  white;
+}
+
+QWidget#FILESVIEW::item:hover
+{
+    background:  rgb(180, 189, 206);
+}
+
+QScrollBar:vertical
+{
+    background: rgb(220, 220, 220);
+    background:       rgb(237, 237, 237);
+    margin:     22px 0 22px 0;
+    border:     none;
+    width:      15px;
+}
+
+QScrollBar::handle:vertical
+{
+    border:         2px solid rgb(220, 220, 220);
+    border:       rgb(237, 237, 237);
+    border-top:     none;
+    border-bottom:  none;
+    background:     rgb(185,185,195);
+    min-height:     20px;
+}
+
+QScrollBar::handle:vertical:hover
+{
+    background: rgb(120,120,120);
+}
+
+QScrollBar::add-line:vertical
+{
+    border:              1px solid rgb(220, 220, 220);
+    border:       1px solid rgb(237, 237, 237);
+    background:          rgb(220, 220, 220);
+    background:       rgb(237, 237, 237);
+    subcontrol-position: bottom;
+    subcontrol-origin:   margin;
+    height:              20px;
+}
+
+QScrollBar::sub-line:vertical
+{
+    border:              1px solid rgb(220, 220, 220);
+    background:          rgb(220, 220, 220);
+     border:       1px solid rgb(237, 237, 237);
+      background:       rgb(237, 237, 237);
+    subcontrol-origin:   margin;
+    subcontrol-position: top;
+    height:              20px;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical
+{
+    background: rgb(170,170,170);
+    border:     none;
+    width:      3px;
+    height:     3px;
+}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical
+{
+      background: none;
+}
+
+QScrollBar:horizontal
+{
+    margin:     0px 22px 0px 22px;
+    background: rgb(220, 220, 220 );
+    background:       rgb(237, 237, 237);
+    border:     none;
+    height:     15px;
+    padding:    0;
+}
+
+QScrollBar::handle:horizontal
+{
+    border:        2px solid rgb(220, 220, 220 );
+    border-top:    none;
+    border-bottom: none;
+    background:    rgb(185,185,195);
+    border:        2px solid rgb(237, 237, 237);
+    background:     rgb(185,185,195);
+    min-width:     20px;
+}
+
+QScrollBar::handle:horizontal:hover
+{
+    background: rgb(120,120,120);
+    min-height: 20px;
+}
+
+QScrollBar::add-line:horizontal
+{
+    border:              1px solid rgb(220, 220, 220 );
+    background:          rgb(220, 220, 220 );
+    border:              1px solid rgb(237, 237, 237);
+    background:       rgb(237, 237, 237);
+    subcontrol-origin:   margin;
+    subcontrol-position: right;
+    width:               20px;
+}
+
+QScrollBar::sub-line:horizontal
+{
+    border:              1px solid rgb(220, 220, 220 );
+    background:          rgb(220, 220, 220 );
+    border:              1px solid rgb(237, 237, 237);
+    background:       rgb(237, 237, 237);
+    subcontrol-origin:   margin;
+    subcontrol-position: left;
+    width:               20px;
+}
+
+QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal
+{
+    background: rgb(170,170,170);
+    border:     none;
+    width:      3px;
+    height:     3px;
+}
+
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
+{
+     background: none;
+}
