@@ -1,1 +1,2 @@
-A simple hex view.
+A simple read-only hex view.
+
