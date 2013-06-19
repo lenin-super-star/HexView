@@ -19,7 +19,9 @@ SOURCES += main.cpp\
     globalsettings.cpp \
     mainmenubar.cpp \
     fileexplorer.cpp \
-    mainview.cpp
+    mainview.cpp \
+    tabview.cpp \
+    explorerwindow.cpp
 
 HEADERS  += mainwindow.h\
             maintoolbar.h \
@@ -28,4 +30,6 @@ HEADERS  += mainwindow.h\
     mainmenubar.h \
     xpixmaps.h \
     fileexplorer.h \
-    mainview.h
+    mainview.h \
+    tabview.h \
+    explorerwindow.h
