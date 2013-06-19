@@ -9,7 +9,7 @@ static const char * icon_open[] = {
     "!	c black",
     "#	c #FFCC00",
     "$	c None",
-    "%	c White",
+    "%	c #777272",
     "                    ",
     "   #$$$#$$$$$$$     ",
     "   $###%%%%%%%$     ",
@@ -36,7 +36,7 @@ static const char * icon_open[] = {
 static const char * icon_find_in_current[] = {
     "20 20 2 1",
     " 	c None",
-    "!	c White",
+    "!	c #777272",
     "                    ",
     "                    ",
     "                    ",
@@ -61,24 +61,60 @@ static const char * icon_find_in_current[] = {
 
 /* XPM */
 static const char * icon_close_tab[] = {
-"15 15 2 1",
+    "13 13 2 1",
+    " 	c None",
+    "!	c White",
+    "             ",
+    "             ",
+    "             ",
+    "  !!     !!  ",
+    "   !!   !!   ",
+    "    !! !!    ",
+    "     !!!     ",
+    "    !! !!    ",
+    "   !!   !!   ",
+    "  !!     !!  ",
+    "             ",
+    "             ",
+    "             "};
+
+/* XPM */
+static const char * icon_close[] = {
+"13 13 2 1",
 " 	c None",
-"!	c White",
-"               ",
-"               ",
-"               ",
-"               ",
-"    !     !    ",
-"     !   !     ",
-"      ! !      ",
-"       !       ",
-"      ! !      ",
-"     !   !     ",
-"    !     !    ",
-"               ",
-"               ",
-"               ",
-"               "};
+"!	c #656060",
+"             ",
+"             ",
+"             ",
+"  !!     !!  ",
+"   !!   !!   ",
+"    !! !!    ",
+"     !!!     ",
+"    !! !!    ",
+"   !!   !!   ",
+"  !!     !!  ",
+"             ",
+"             ",
+"             "};
+
+/* XPM */
+static const char * icon_hide[] = {
+"13 13 2 1",
+" 	c None",
+"!	c #656060",
+"             ",
+"             ",
+"       !     ",
+"      !!     ",
+"     !!!     ",
+"    !!!!     ",
+"   !!!!!     ",
+"    !!!!     ",
+"     !!!     ",
+"      !!     ",
+"       !     ",
+"             ",
+"             "};
 
 
 /* XPM - small file icon */
@@ -87,7 +123,7 @@ static const char * icon_smallfile[] = {
 " 	c None",
 "#	c #8391A1",
 ".	c White",
-"o	c #8391A1",
+"o	c #777272",
 "               ",
 "               ",
 "               ",

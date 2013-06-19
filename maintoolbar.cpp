@@ -2,6 +2,7 @@
 #ifndef MAINTOOLBAR_H
 #define MAINTOOLBAR_H
 
+#include <QGraphicsDropShadowEffect>
 #include <QFileDialog>
 #include <QDialog>
 #include <QIcon>

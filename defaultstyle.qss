@@ -6,15 +6,16 @@ QWidget
 
 QMainWindow
 {
-    background:       rgb(237, 237, 237);
+    background:       rgb(243,243,243);
     border:           none;
 }
+
 
 QMainWindow > QToolBar,
 QMainWindow > QMenuBar
 {
-    background:       rgb(237, 237, 237);
-    background:       rgb(80, 80, 90);
+    background:       rgb(243,243,243);
+
     border:           none;
     padding:          3px;
 }
@@ -23,6 +24,7 @@ QMainWindow > QMenuBar
 QMainWindow > QMenuBar::item:selected
 {
     color: rgb(108, 170, 255);
+    color: #2E7DC4;
 }
 
 
@@ -38,7 +40,10 @@ QMainWindow > QToolBar
 
     background:       rgb(80, 80, 90);
 
-    border: 2px solid rgb(80,80,90);
+    background:       rgb(243,243,243);
+
+    border: 2px solid rgb(243,243,243);
+    color:            rgb(50,50,60);
 }
 
 QMainWindow > QToolBar > QToolButton
@@ -61,7 +66,8 @@ QMainWindow > QMenuBar::item
 {
     background:       rgb(237, 237, 237);
     background:       rgb(80, 80, 90);
-    color:            white;
+        background:       rgb(243,243,243);
+    color:            rgb(50,50,60);
 }
 
 QMainWindow > QToolBar > QLineEdit
@@ -73,14 +79,15 @@ QMainWindow > QToolBar > QLineEdit
     padding-right:      2px;
 }
 
+
 QSplitter::vertical:handle
 {
-    width:  1px;
+    width:  3px;
 }
 
 QSplitter:horizontal::handle
 {
-    height: 1px;
+    height: 3px;
 }
 
 QSplitter::handle:vertical
@@ -94,6 +101,7 @@ QSplitter::handle:vertical
     background: rgb(120,120,120);
 
 background: rgba(68, 130, 255, 130);
+background: transparent;
 }
 
 QSplitter::handle:horizontal
@@ -106,7 +114,23 @@ QSplitter::handle:horizontal
     background: rgb(220,220,220);
 
 background: rgba(80, 80, 90, 100);
+background: rgb(200,200,210);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 rgb(243, 243, 243),
+stop: 0.5 rgb(182,188,192),
+stop: 1 rgb(243, 243, 243));
+background: transparent;
+background: rgb(220,220,230);
+background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+stop: 0 rgb(243, 243, 243),
+stop: 0.5 rgb(175,175,175),
+stop: 1 rgb(243, 243, 243));
+border-left: 1px solid rgb(243,243,243);
+border-right: 1px solid rgb(243,243,243);
+
 }
+
+
 
 QTabWidget#TABVIEW QWidget#HEXVIEW
 {
@@ -178,7 +202,7 @@ color: white;
 border-top: 2px solid rgb(237,237,237);
 border: none;
 
-background: rgb(237,237,237);
+background: rgb(243,243,243);
 
 color: rgb(251, 177, 23 );
 }
@@ -191,16 +215,46 @@ QTabWidget#TABVIEW
 
 QTabWidget#TABVIEW:pane
 {
-    background: white;
+    background: transparent;
     border:     none;
 }
 
+
+
+QWidget#FILEEXPLORER QLabel
+{
+    color: rgb(75,75,75);
+    background: rgb(230,230,230);
+    background: transparent;
+    padding: 0px;
+    padding-right: 2px;
+}
+
+QWidget#FILEEXPLORER QToolBar
+{
+    border: none;
+    background: rgb(230,230,230);
+    background: transparent;
+    background: qlineargradient(x1:0, y1:0, x2:0, y2:1,
+                                stop:0   rgb(255, 255, 255),
+                                stop:1   rgb(243,243,243));
+                                background: white;
+                                border: 0.5px solid rgb(235,235,235);
+
+border: none;
+background: transparent;
+}
+
+QWidget#FILEEXPLORER QWidget#SPACER
+{
+    background-image: url(c:\spacerimage.ico);
+}
+
+
 QWidget#FILESVIEW
 {
-    padding-top: 5px;
-    background:  rgb(237, 237, 237);
+    background:  rgb(243, 243, 243);
     border:      none;
-    background:  white;
 }
 
 QWidget#FILESVIEW::item:hover
@@ -210,8 +264,8 @@ QWidget#FILESVIEW::item:hover
 
 QScrollBar:vertical
 {
-    background: rgb(220, 220, 220);
-    background:       rgb(237, 237, 237);
+    background: rgb(235, 235, 253);
+    background:       rgb(243, 243, 243);
     margin:     22px 0 22px 0;
     border:     none;
     width:      15px;
@@ -219,11 +273,10 @@ QScrollBar:vertical
 
 QScrollBar::handle:vertical
 {
-    border:         2px solid rgb(220, 220, 220);
-    border:       rgb(237, 237, 237);
+    border:         2px solid rgb(243, 243, 243);
     border-top:     none;
     border-bottom:  none;
-    background:     rgb(185,185,195);
+    background:     rgb(215,215,215);
     min-height:     20px;
 }
 
@@ -328,3 +381,15 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal
 {
      background: none;
 }
+
+QSplitter QWidget#MAINVIEW
+{
+    border:  0.5px solid rgb(180,180,180);
+    background: rgb(220,220,220);
+    border: none;
+    background: transparent;
+}
+
+
+
+

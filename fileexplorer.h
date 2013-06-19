@@ -4,9 +4,10 @@
 
 #include <QStandardItemModel>
 #include <QListView>
+#include <QToolBar>
 #include <QList>
 
-class FileExplorer : public QListView
+class FileExplorer : public QWidget
 {
     Q_OBJECT
 
@@ -29,6 +30,9 @@ private:
     QStringList files;
 
     QStandardItemModel filesModel;
+
+    QListView   *listview;
+    QToolBar    *toolbar;
 };
 
 #endif // FILESVIEW_H

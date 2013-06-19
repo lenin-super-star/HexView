@@ -1,69 +1,47 @@
-
+#include <QGraphicsDropShadowEffect>
 #include <QVBoxLayout>
-#include <QToolButton>
-#include <QLineEdit>
-#include <QFileInfo>
-#include <QIcon>
-#include <QFile>
+#include <QStyleOption>
+#include <QPainter>
 
-#include "xpixmaps.h"
 #include "mainview.h"
 
 MainView::MainView(QWidget *parent)
-    : QTabWidget(parent)
-    , currIndex(-1)
+    : QWidget(parent)
+    , tabView(new TabView)
 {
-    this->setObjectName("TABVIEW");
-    this->setContentsMargins(0,0,0,0);
+    this->setObjectName("MAINVIEW");
 
-    QObject::connect(this, SIGNAL(currentChanged(int)), this, SLOT(on_current_changed(int)));
+    this->setLayout(new QVBoxLayout);
+    this->layout()->setContentsMargins(0,0,0,0);
+
+//    QGraphicsDropShadowEffect *wndShadow = new QGraphicsDropShadowEffect;
+
+//    wndShadow->setBlurRadius(50);
+
+//    wndShadow->setColor(QColor(120, 120, 120));
+
+//    wndShadow->setOffset(0);
+
+//    this->setGraphicsEffect(wndShadow);
+
+    this->layout()->setContentsMargins(0,0,0,0);
+
+
+    this->layout()->addWidget(new QWidget);
+    this->layout()->addWidget(tabView);
+    this->layout()->setSpacing(0);
+
+    QObject::connect(this, SIGNAL(signal_add_view(QString)), tabView, SLOT(on_add_view(QString)));
+    QObject::connect(this, SIGNAL(signal_find_in_current()), tabView, SLOT(on_find_in_current()));
 }
 
-void MainView::on_add_view(const QString& name)
+void MainView::paintEvent(QPaintEvent *e)
 {
-    QFile           file(name);
-    file.open(QFile::ReadOnly);
+    QWidget::paintEvent(e);
+    QStyleOption opt;
+         opt.init(this);
+         QPainter p(this);
+         style()->drawPrimitive(QStyle::PE_Widget, &opt, &p, this);
 
-    QByteArray      *data = new QByteArray(file.readAll());
-    HexViewInternal *hexviewinternal = new HexViewInternal(data, this);
-
-    // Add the close button to the tab
-
-    QToolButton *close = new QToolButton;
-
-    close->setIcon(QIcon(icon_close_tab));
-
-    QObject::connect(close, SIGNAL(clicked()), this, SLOT(on_close_tab()));
-
-    int index = this->addTab(hexviewinternal, QFileInfo(name).fileName());
-    this->tabBar()->setTabButton(index, QTabBar::RightSide, close);
-
-    this->setCurrentIndex(index);
-}
-
-void MainView::on_find_in_current()
-{
-
-}
-
-void MainView::on_close_tab()
-{
-    this->removeTab(this->currentIndex());
-}
-
-void MainView::on_current_changed(int index)
-{
-    if (-1 != currIndex && this->tabBar()->tabButton(currIndex, QTabBar::RightSide) )
-        this->tabBar()->tabButton(currIndex, QTabBar::RightSide)->hide();
-
-    if (this->tabBar()->tabButton(index, QTabBar::RightSide))
-        this->tabBar()->tabButton(index, QTabBar::RightSide)->show();
-
-    currIndex = index;
-}
-
-MainView::~MainView()
-{
-    // Cleanup here
 }
 

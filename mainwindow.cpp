@@ -12,12 +12,13 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , menubar(new MainMenubar(this))
     , toolbar(new MainToolbar(this))
-    , hexView(new MainView(this))
+    //, hexView(new MainView(this))
     , filesView(new FileExplorer(this))
 {
     this->setMenuBar(menubar);
     this->addToolBar(toolbar);
 
+    hexView = new MainView;
     QFile stylesheet(DEFAULTSTYLE);
 
     stylesheet.open(QFile::ReadOnly);
@@ -29,7 +30,7 @@ MainWindow::MainWindow(QWidget *parent)
     this->setContentsMargins(0,0,0,0);
 
     QObject::connect(this, SIGNAL(signal_files(QStringList)), filesView, SLOT(on_files(QStringList)));
-    QObject::connect(filesView, SIGNAL(signal_clicked(QString)), hexView, SLOT(on_add_view(QString)));
+    QObject::connect(filesView, SIGNAL(signal_clicked(QString)), hexView, SIGNAL(signal_add_view(QString)));
 
     // Create the views
 
@@ -40,6 +41,8 @@ MainWindow::MainWindow(QWidget *parent)
     horizontalsplitter->addWidget(hexView);
 
     horizontalsplitter->setStretchFactor(1,3);
+
+    horizontalsplitter->setContentsMargins(4,4,4,4);
 
     this->setCentralWidget(horizontalsplitter);
 }

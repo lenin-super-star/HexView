@@ -1,36 +1,31 @@
+#ifndef MAINVIEW_H
+#define MAINVIEW_H
 
-#ifndef HEXVIEW_H
-#define HEXVIEW_H
+#include "tabview.h"
 
-#include <QByteArray>
-#include <QTabWidget>
-#include <QToolBar>
-#include <QTabBar>
+#include <QPlainTextEdit>
 
-#include "hexviewinternal.h"
-
-class MainView : public QTabWidget
+class MainView : public QWidget
 {
     Q_OBJECT
 
 public:
 
     MainView(QWidget *parent = 0);
-    ~MainView();
 
-protected slots:
+signals:
 
-    void on_find_in_current();
+    void signal_find_in_current();
 
-    void on_add_view(const QString&);
+    void signal_add_view(const QString&);
 
-    void on_close_tab();
+protected:
 
-    void on_current_changed(int);
+    void MainView::paintEvent(QPaintEvent *e);
 
 private:
 
-    int currIndex;
+    TabView     *tabView;
 };
 
-#endif /* HEXVIEW_H */
+#endif /* MAINVIEW_H */

@@ -34,4 +34,6 @@ MainMenubar::MainMenubar(QWidget *parent)
     menuHelp->addAction(actionAbout);
 
     this->setFixedHeight(30);
+
+    this->setFont(QFont("Segoe UI", 10.5));
 }
